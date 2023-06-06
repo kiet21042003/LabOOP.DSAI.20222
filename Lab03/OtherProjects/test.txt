@@ -1,0 +1,40 @@
+Definition of Machine Learning: Arthur Samuel, an early American leader in the field of computer gaming and artificial intelligence, coined the term “Machine Learning ” in 1959 while at IBM. He defined machine learning as 
+“the field of study that gives computers the ability to learn without being explicitly programmed “. However, there is no universally accepted definition for machine learning. Different authors define the term differently. 
+
+We give below two more definitions.
+
+Machine learning is programming computers to optimize a performance criterion using example data or past experience . We have a model defined up to some parameters, and learning is the execution of
+
+a computer program to optimize the parameters of the model using the training data or past experience. The model may be predictive to make predictions in the future, or descriptive to gain knowledge from data.
+
+The field of study known as machine learning is concerned with the question of how to construct computer programs that automatically improve with experience.
+
+Machine learning is a subfield of artificial intelligence that involves the development of algorithms and statistical models that enable computers to improve their performance in tasks through experience.
+
+These algorithms and models are designed to learn from data and make predictions or decisions without explicit instructions. There are several types of machine learning, including supervised learning, unsupervised learning, 
+and reinforcement learning. Supervised learning involves training a model on labeled data, while unsupervised learning involves training a model on unlabeled data. Reinforcement learning involves training a model through trial and error. 
+Machine learning is used in a wide variety of applications, including image and speech recognition, natural language processing, and recommender systems.
+
+Definition of learning: A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P , if its performance at tasks T, as measured by P , improves with experience E. 
+
+Classification of Machine Learning
+Machine learning implementations are classified into four major categories, depending on the nature of the learning “signal” or “response” available to a learning system which are as follows:
+
+A. Supervised learning:
+Supervised learning is the machine learning task of learning a function that maps an input to  an output based on example input-output pairs. The given data is labeled . Both classification and regression 
+problems are supervised learning problems . 
+
+Example —  Consider the following data regarding patients entering a clinic . The data consists of the gender and age of the patients and each patient is labeled as “healthy” or “sick”.
+
+B. Unsupervised learning:
+Unsupervised learning is a type of machine learning algorithm used to draw inferences from datasets consisting of input data without labeled responses. In unsupervised learning algorithms, classification or
+
+categorization is not included in the observations. Example: Consider the following data regarding patients entering a clinic. The data consists of the gender and age of the patients. 
+
+C. Reinforcement learning:
+Reinforcement learning is the problem of getting an agent to act in the world so as to maximize its rewards.
+
+A learner is not told what actions to take as in most forms of machine learning but instead must discover which actions yield the most reward by trying them. For example — 
+Consider teaching a dog a new trick: we cannot tell him what to do, what not to do, but we can reward/punish it if it does the right/wrong thing.
+
+ When watching the video, notice how the program is initially clumsy and unskilled but steadily improves with training until it becomes a champion.

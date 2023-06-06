@@ -1,0 +1,9 @@
+The user can either enter a month in its full name, abbreviation
+in 3 letters, or in number. E.g: January as January, Jan., Jan, and 1
+
+The user must enter a year in a non-negative number and all the digits.
+E.g: Valid inputs for 1999 is only 1999, not 99...
+
+A year is either a common year of 365 days or leap year of 366 days.
+Every year that is divisible by 4 is a leap year, except for years
+that divisible by 100, but not by 400. 
