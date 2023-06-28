@@ -1,10 +1,12 @@
 package hust.soict.dsai.aims.media;
 
+import hust.soict.dsai.aims.exception.DataConstraintsException;
+
 public class Disc extends Media{
 	private int length;
 	private String director;
 	
-	public Disc(String title, String category, String director, int length, float cost) {
+	public Disc(String title, String category, String director, int length, float cost) throws DataConstraintsException {
 		super(title, category, cost);
 		this.length = length;
 		this.director = director;

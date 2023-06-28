@@ -2,10 +2,12 @@ package hust.soict.dsai.aims.media;
 
 import java.util.*;
 
+import hust.soict.dsai.aims.exception.DataConstraintsException;
+
 public class Book extends Media {
 	private List<String> authors = new ArrayList<String>();
 	
-	public Book(String title, String category, float cost) {
+	public Book(String title, String category, float cost) throws DataConstraintsException {
 		super(title, category, cost);
 	}
 

@@ -1,10 +1,12 @@
 package hust.soict.dsai.test.cart;
 import hust.soict.dsai.aims.cart.*;
+import hust.soict.dsai.aims.exception.DataConstraintsException;
+import hust.soict.dsai.aims.exception.LimitExceededException;
 import hust.soict.dsai.aims.media.*;
 
 public class CartTest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws LimitExceededException, DataConstraintsException {
 		//Create a new cart
 		Cart cart = new Cart();
 		

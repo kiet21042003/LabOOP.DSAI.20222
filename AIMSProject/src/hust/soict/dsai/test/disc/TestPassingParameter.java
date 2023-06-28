@@ -1,9 +1,10 @@
 package hust.soict.dsai.test.disc;
+import hust.soict.dsai.aims.exception.DataConstraintsException;
 import hust.soict.dsai.aims.media.*;
 
 public class TestPassingParameter {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws DataConstraintsException {
 		// TODO Auto-generated method stub
 		DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
 		DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Ciderella");
@@ -16,7 +17,7 @@ public class TestPassingParameter {
 		System.out.println("jungle dvd title: " + jungleDVD.getTitle());
 	}
 	
-	public static void swap(DigitalVideoDisc o1, DigitalVideoDisc o2) {
+	public static void swap(DigitalVideoDisc o1, DigitalVideoDisc o2) throws DataConstraintsException {
 		DigitalVideoDisc tmp = new DigitalVideoDisc(o1.getTitle(), o1.getCategory(), o1.getDirector(), o1.getLength(), o1.getCost());
 		o1.setTitle(o2.getTitle());
 		o1.setCategory(o2.getCategory());
@@ -30,7 +31,7 @@ public class TestPassingParameter {
 		o2.setCost(tmp.getCost());
 	}
 	
-	public static void changeTitle(DigitalVideoDisc dvd, String title) {
+	public static void changeTitle(DigitalVideoDisc dvd, String title) throws DataConstraintsException {
 		String oldTitle = dvd.getTitle();
 		dvd.setTitle(title);
 		dvd = new DigitalVideoDisc(oldTitle);

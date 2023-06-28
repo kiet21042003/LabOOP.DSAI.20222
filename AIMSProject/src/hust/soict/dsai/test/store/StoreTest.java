@@ -1,10 +1,11 @@
 package hust.soict.dsai.test.store;
 import hust.soict.dsai.aims.store.*;
+import hust.soict.dsai.aims.exception.DataConstraintsException;
 import hust.soict.dsai.aims.media.*;
 
 public class StoreTest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws DataConstraintsException {
 		// TODO Auto-generated method stub
 		//Create a new store
 		Store myStore = new Store();
