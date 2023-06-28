@@ -2,12 +2,19 @@ package hust.soict.dsai.aims.media;
 
 import java.util.Comparator;
 
-public abstract class Media {
-	public Media(String title, String category, float cost) {
+import hust.soict.dsai.aims.exception.DataConstraintsException;
+
+public abstract class Media {	
+	public Media(String title, String category, float cost) throws DataConstraintsException {
 		this.id = ++nbMedia;
 		this.title = title;
 		this.category = category;
-		this.cost = cost;
+		if (cost >= 0) {
+			this.cost = cost;
+		}
+		else {
+			throw new DataConstraintsException("ERROR: The price must be non-negative");
+		}
 	}
 	
 	public Media(String title) {

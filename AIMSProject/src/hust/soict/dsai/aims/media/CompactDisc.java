@@ -2,16 +2,19 @@ package hust.soict.dsai.aims.media;
 
 import java.util.ArrayList;
 
+import hust.soict.dsai.aims.exception.DataConstraintsException;
+import hust.soict.dsai.aims.exception.PlayerException;
+
 public class CompactDisc extends Disc implements Playable{
 	private String artist;
 	private ArrayList<Track> tracks = new ArrayList<Track>();
 	
-	public CompactDisc(String title, String category, String director, int length, String artist, float cost) {
+	public CompactDisc(String title, String category, String director, int length, String artist, float cost) throws DataConstraintsException {
 		super(title, category, director, length, cost);
 		this.artist = artist;
 	}
 	
-	public CompactDisc(String title, String category, float cost) {
+	public CompactDisc(String title, String category, float cost) throws DataConstraintsException {
 		super(title, category, null, 0, 0.0f);
 	}
 	
@@ -57,11 +60,20 @@ public class CompactDisc extends Disc implements Playable{
 		return sum;
 	}
 	
-	public void play() {
+	public void play() throws PlayerException {
 		System.out.println(String.format("CD %s from artist %s\nThis CD contains %dtracks",
 										  this.getTitle(), this.artist, this.tracks.size()));
-		for (Track t: tracks) {
-			t.play();
+		if (this.getLength() > 0) {
+			for (Track t: tracks) {
+				try {
+					t.play();
+				} catch (PlayerException e) {
+					throw e;
+				}
+			}
+		}
+		else {
+			throw new PlayerException("ERROR: CD length is non-positive!");
 		}
 	}
 	

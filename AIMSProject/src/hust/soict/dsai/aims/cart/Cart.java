@@ -1,26 +1,36 @@
 package hust.soict.dsai.aims.cart;
 
+import hust.soict.dsai.aims.exception.LimitExceededException;
 import hust.soict.dsai.aims.media.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 
 public class Cart {
-	private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+	private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
+	private static int MAX_NUMBER_ORDERED = 20;
 	
-	public ArrayList<Media> getItemsOrdered() {
+	public ObservableList<Media> getItemsOrdered() {
 		return itemsOrdered;
 	}
 
-	public void setItemsOrdered(ArrayList<Media> itemsOrdered) {
+	public void setItemsOrdered(ObservableList<Media> itemsOrdered) {
 		this.itemsOrdered = itemsOrdered;
 	}
 
-	public void addMedia(Media disc) {
-		if (itemsOrdered.contains(disc)) {
-			System.out.println("The disc's already there");
-			return;
+	public void addMedia(Media disc) throws LimitExceededException{
+		if (itemsOrdered.size() < MAX_NUMBER_ORDERED) {
+			if (itemsOrdered.contains(disc)) {
+				System.out.println("The disc's already there");
+				return;
+			}
+			itemsOrdered.add(disc);
+			System.out.println("Successfully added");
 		}
-		itemsOrdered.add(disc);
-		System.out.println("Successfully added");
+		else {
+			throw new LimitExceededException("ERROR: the number of media has reached its limit");
+		}
 	}
 	
 	public void addMedia(Media[] dvdList) {
@@ -32,7 +42,7 @@ public class Cart {
 		System.out.println("Successfully added");
 	}
 	
-	public void addMedia(Media dvd1, Media dvd2) {
+	public void addMedia(Media dvd1, Media dvd2) throws LimitExceededException{
 		addMedia(dvd1);
 		addMedia(dvd2);
 	}
